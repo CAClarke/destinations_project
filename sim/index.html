@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+ 
+    <link rel="stylesheet" href="owl_carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owl_carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="stylesheets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Roboto:400,700,700i" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- navigation -->
+    <header>
+        <nav id="navbar">
+            <a href="index.html"><img src="img/logo.png" alt="Tri logo" class="logo"></a>      
+                    
+            <ul class="nav_links">
+                 <li><a href="destination.html">kyoto</a></li>
+                 <li><a href="destination.html">beijing</a></li>
+                 <li><a href="destination.html">seoul</a></li>
+                 <li><a href="newsletter.html">newsletter</a></li>
+            </ul>
+
+            <form action="" class="login">
+                    <label for="admin">Admin</label>
+                    <input type="text" name="username" value="" placeholder="username" required>
+                    <input type="text" name="password" value="" placeholder="password" required>
+                    <input type="submit" name="submit">
+            </form>
+
+            
+            
+            <!-- <a href="create.html">create</a>
+            <a href="destination.html">destination</a> -->
+                              
+        </nav>
+    </header>
+    
+
+    <!-- page body -->
+    <h1 id="page_title">Start <del> travelling </del> <ins>exploring</ins></h1>
+
+    <div id="destinations_container">
+        <!-- Kyoto -->
+             <div id="kyoto_container">
+                    <div>
+                        <div id="carousel_container" class="kyoto_slideshow">
+                                <div class="owl-carousel owl-theme">
+                                  <div class="item"><img src="img/beijing1.JPG" alt=""></div>
+                                  <div class="item"><img src="img/kyoto1.JPG" alt=""></div>
+                                  <div class="item"><img src="img/seoul1.JPG" alt=""></div>
+                                </div>
+                              </div>
+                    </div>
+                    <a href="http://" class="city_title" id="kyoto">kyoto</a>
+            </div>
+
+        <!-- Beijing -->
+            <div id="beijing_container">
+                        <div>
+                                <div id="carousel_container" class="guilin_slideshow">
+                                        <div class="owl-carousel owl-theme">
+                                          <div class="item"><img src="img/seoul1.JPG" alt=""></div>
+                                          <div class="item"><img src="img/beijing1.JPG" alt=""></div>
+                                          <div class="item"><img src="img/kyoto1.JPG" alt=""></div>
+                                        </div>
+                                </div>
+                        </div>
+                 <a href="http://" class="city_title" id="beijing">beijing</a>
+            </div>
+
+        <!-- Seoul -->
+            <div id="seoul_container">
+                <div>
+                        <div id="carousel_container" class="seoul_slideshow">
+                                <div class="owl-carousel owl-theme">
+                                  <div class="item"><img src="img/kyoto1.JPG" alt=""></div>
+                                  <div class="item"><img src="img/seoul1.JPG" alt=""></div>
+                                  <div class="item"><img src="img/beijing1.JPG" alt=""></div>
+                                </div>
+                              </div>
+                </div>
+                
+                <a href="http://" class="city_title" id="seoul">seoul</a>
+            </div>
+
+            <a href="newsletter.html" class="newsletter_link">Sign up for our newsletter</a>
+    </div>
+    <footer> &copy; C Clarke '18</footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="owl_carousel/owl.carousel.min.js"></script>
+  
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+  
+      
+   //carousel
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+    
+    });//jquery end
+  </script>
+</html>

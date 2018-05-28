@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Destination</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="owl_carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owl_carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Roboto:400,700,700i" rel="stylesheet">
+</head>
+<body>
+    <!-- navigation -->
+    <header>
+            <nav id="navbar">
+                <a href="index.html"><img src="img/logo.png" alt="Tri logo" class="logo"></a>      
+                        
+                <ul class="nav_links">
+                     <li><a href="destination.html">kyoto</a></li>
+                     <li><a href="destination.html">guilin</a></li>
+                     <li><a href="destination.html">seoul</a></li>
+                     <li><a href="newsletter.html">newsletter</a></li>
+                </ul>
+                
+                    <a href="create.html">create</a>
+                    <a href="destination.html">destination</a>
+                       
+                <form action="" class="login">
+                                    <input type="text" name="username" value="username" id="" placeholder="username" required>
+                                    <input type="text" name="password" value="password" id="" placeholder="password" required>
+                                    <input type="submit" name="submit" value="Go" id="submit_btn">
+                </form>
+                                  
+            </nav>
+        </header>
+    <!-- create page -->
+    <form action="" class="create_page" >
+        <input type="text" value="" name="city_name" class="create_page" placeholder="City, Country" required>
+        <div id="editor" class="text-editor"> </div>
+        <form action="/upload" enctype="multipart/form-data">
+            <input type="file" name="">
+            <input type="file" name="">
+            <input type="file" name="">
+            <input type="file" name="">
+            <input type="submit" name="upload" value="upload">
+        </form>
+        <input type="submit" value="submit" name="submit" class="create_page">
+    </form>
+    
+    
+</body>
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>
+
+</html>

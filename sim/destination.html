@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="owl_carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owl_carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="stylesheets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Roboto:400,700,700i" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- navigation -->
+    <header>
+        <nav id="navbar">
+            <a href="index.html"><img src="img/logo.png" alt="Tri logo" class="logo"></a>      
+                    
+            <ul class="nav_links">
+                 <li><a href="destination.html">kyoto</a></li>
+                 <li><a href="destination.html">beijing</a></li>
+                 <li><a href="destination.html">seoul</a></li>
+                 <li><a href="newsletter.html">newsletter</a></li>
+            </ul>
+
+            <form action="" class="login">
+                    <label for="admin">Admin</label>
+                    <input type="text" name="username" value="" placeholder="username" required>
+                    <input type="text" name="password" value="" placeholder="password" required>
+                    <input type="submit" name="submit">
+            </form>
+
+            
+            
+            <a href="create.html">create</a>
+            <a href="destination.html">destination</a>
+                              
+        </nav>
+    </header>
+    
+    <!-- destination page -->
+    <div id="destinations_container">
+        <img src="http://3.bp.blogspot.com/-chS3TOtmFz8/Uttzo_qKnPI/AAAAAAAABpA/gCtXQ94ePik/s1600/IMG_0199.JPG" alt="The forbidden city" class="destination_backdrop">
+        <p class="destination_city">Beijing</p>
+        <div id="destination_time"></div>
+        <p class="destination_text">text</p>
+        <div id="destination_map"></div>
+        <div class="destination_gallery">
+            <img class="myImg" src="img/kyoto1.JPG" alt="Inari Shrine Tori">
+            <img class="myImg" src="img/seoul1.JPG" alt="Inari Shrine Tori">
+            <img class="myImg" src="img/beijing1.JPG" alt="Inari Shrine Tori">
+            <img class="myImg" src="img/news1.jpg" alt="Inari Shrine Tori">
+        
+        <!-- <div id="destination_carousel">
+                <div class="owl-carousel owl-theme">
+                  <img src="img/kyoto1.JPG" alt="" class="item" id="myImg">
+                  <img src="img/news1.jpg" alt="" class="item" id="myImg">
+                  <img src="img/seoul1.JPG" alt="" class="item" id="myImg">
+                  <img src="img/beijing1.JPG" alt="" class="item" id="myImg">
+                </div>
+         </div> -->
+
+            <!-- The Modal -->
+        <div class="myModal" class="modal">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+      
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" class="img01">
+      
+        <!-- Modal Caption (Image Text) -->
+        <div class="caption">Inari Shrine Tori</div>
+        </div>
+        </div>
+                
+    </div>
+    
+    <footer> &copy; C Clarke '18</footer>
+</body>
+<!-- owl carousel 2 script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="owl_carousel/owl.carousel.min.js"></script>
+
+<!-- JS start script -->
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    
+ //carousel
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      1000: {
+        items: 4
+      }
+    }
+  });
+
+    // Get the modal
+    var modal = document.getElementsByClassName('myModal');
+    // Get the image and insert it inside the modal
+    var img = document.getElementsByClassName('myImg');
+    var modalImg = document.getElementsByClassName("img01");
+    var captionText = document.getElementsByClassName("caption");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+
+//timezone api
+ $.getJSON("http://api.timezonedb.com/v2/get-time-zone?key=RPBZ2LGN53GY&format=json&by=zone&zone=America/Chicago&time=1464793200", function(result){
+        var time = result.timestamp;
+        var newtime = new Date(time*1000).toUTCString();
+        $("#destination_time").html('Local time: ' + newtime)
+      });
+
+
+
+
+});//jquery end
+
+    //Google Maps API
+   // Initialize and add the map
+    function initMap() {
+    // The location
+    var location = {lat: 34.9858, lng: 135.7588};
+    // The map
+    var map = new google.maps.Map(
+        document.getElementById('destination_map'), {zoom: 5, center: location});
+    // The marker
+    var marker = new google.maps.Marker({position: location, map: map});
+    };
+    
+</script>
+<!-- google maps script -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDHmg0-3WgNhwOwjNHo57UC-ZmTRDaL3wc"></script>
+</html>
