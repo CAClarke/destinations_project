@@ -1,0 +1,215 @@
+@media (max-width: 500px) {
+    .fullpage{
+        display: grid;
+        grid-auto-columns: auto auto;
+        grid-auto-rows: 100px auto auto auto 40px;
+        grid-gap: 10px;
+        grid-template-areas: "logo page_title"
+                             ". destinations_container"
+                             ". destinations_container"
+                             ". destinations_container"
+                             "footer";
+        background-color: black;
+        nav .logo{
+            grid-area: logo;
+            margin-left: -20px;
+        }
+        nav ul form{
+            display: none;
+        }
+        nav :hover .logo{
+            display: block;
+        }
+        #page_title{
+            grid-area: page_title;
+            text-align: left;
+        }
+        #destinations_container{
+            background-color: black;
+            color: white;
+            border-top: 2px solid white;
+            grid-area: destinations_container;
+            display: grid;
+            grid-template-columns: auto;
+            grid-auto-rows: repeat(4,auto) !important;
+            grid-template-areas: "destination_city"
+                                "destination_text" 
+                                "destination_map"
+                                "destination_gallery";
+            grid-gap: 10px;
+        }
+
+    }
+
+}//end mediaq 
+
+
+@media (max-width: 1500px) {
+    .fullpage{
+        display: grid;
+        grid-auto-columns: 100px auto 10px;
+        grid-auto-rows: auto 100px auto 20px;
+        grid-gap: 10px;
+        grid-template-areas: "header header header"
+                             ". page_title page_title ."
+                             "destinations_container destinations_container ."
+                             "newsletter_link footer footer";
+        background-color: black;
+        nav{
+            grid-area: header;
+            display: grid;
+            grid-column: auto auto;
+            grid-template-rows: 30px 30px 30px;
+            grid-template-areas: "logo login"
+                                 "item1 item2"
+                                 "item3 item4";
+            padding-left:5px;
+            font-family: $cursive;
+            font-size: 25px;
+            font-weight: bold;
+            margin-left: 5px;         
+            
+        }
+        #page_title{
+            grid-area: page_title; 
+            height: 70px;
+            background-color: white;
+        }
+        .item1{
+            grid-area: item1;
+        }
+        .item2{
+            grid-area: item2;
+        }
+        .item3{
+            grid-area: item3;
+        }
+        .item4{
+            grid-area: item4;
+        }
+        .newsletter_link{
+            font-family: $cursive;
+            font-size: 25px;
+            text-align: center;
+            grid-area: newsletter_link;
+        }
+        footer{
+            position: absolute;
+            bottom: 5px;
+            text-align: right;
+            grid-area: footer;
+        }
+        .body_container{
+            grid-column: 2/3;
+            grid-row:2/3;
+        }
+        #destinations_container{
+            background-color: black;
+            color: white;
+            border-top: 2px solid white;
+            grid-area: destinations_container;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-auto-rows: repeat(4,400px) !important;
+            grid-template-areas: "destination_city ."
+                                "destination_text destination_map"
+                                "destination_text destination_text"
+                                "destination_gallery destination_gallery";
+            grid-gap: 10px;
+            #carousel_container{
+                .item{
+                    width: 250px;
+                }
+            }
+        
+            .city_title{
+                color: $complimentColor;
+                mix-blend-mode: multiply;
+                text-transform: uppercase;
+                font-size: 115px;
+                font-weight: bold;
+                text-shadow: 0 0 18px white;
+                z-index: 99 !important;
+                margin-top: -20px;
+            }
+        
+            #kyoto_container{
+                 margin-left: 70px;
+                 font-size: 115px;
+                 font-weight: bold;
+                 grid-column: 2/4;
+                 grid-row:2/3;
+            }
+        
+            #beijing_container{
+                margin-left: 70px;
+                font-size: 115px;
+                font-weight: bold;
+                grid-column: 2/4;
+                grid-row:3/4;
+            }
+        
+            #seoul_container{
+                margin-left: 70px;
+                font-size: 115px;
+                font-weight: bold;
+                grid-column: 2/4;
+                grid-row:4/5;
+            }
+    
+            //destination template 
+            .destination_backdrop{
+                display: none;
+                
+            }
+    
+            .destination_city{
+                font-size: 60px;
+                font-weight: bolder;
+                grid-area: destination_city;
+                text-shadow: 0 0 18px $highlightColor;
+            }
+    
+            .destination_text{
+                font-size: 20px;
+                grid-area: destination_text;
+                margin-top: 24px;
+                border: 1px solid white;
+            }
+    
+            #destination_map{
+                grid-area: destination_map;
+                width: 100px;
+                height: 100px;
+                border: 2px solid $complimentColor;
+            }
+    
+            .destination_gallery{
+                    grid-area: destination_gallery;
+                    margin: 5px;
+                    border: 1px solid $complimentColor;
+            }
+        }//end destination_container styling
+    
+        #page_title{
+            text-align: center;
+            margin-right: 5px;
+            font-size: 50px;
+        }
+        
+       
+        #newsletter_form{
+            background-image: none;
+            grid-column: 1/4;
+            grid-row:2/6;
+            h2{
+                margin-top: 50px;
+                margin-left: 55px;
+            }
+        } 
+    }//end body styling
+    
+
+    
+                
+}//end mediaQ 1500
