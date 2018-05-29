@@ -1,38 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="owl_carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owl_carousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Roboto:400,700,700i" rel="stylesheet">
+    <% include ../partials/head %>
 </head>
 <body>
     <!-- navigation -->
     <header>
-            <nav id="navbar">
-                <a href="index.html"><img src="img/logo.png" alt="Tri logo" class="logo"></a>      
-                        
-                <ul class="nav_links">
-                     <li><a href="destination.html">kyoto</a></li>
-                     <li><a href="destination.html">guilin</a></li>
-                     <li><a href="destination.html">seoul</a></li>
-                     <li><a href="newsletter.html">newsletter</a></li>
-                </ul>
-                
-                    <a href="create.html">create</a>
-                    <a href="destination.html">destination</a>
-                       
-                <form action="" class="login">
-                                    <input type="text" name="username" value="username" id="" placeholder="username" required>
-                                    <input type="text" name="password" value="password" id="" placeholder="password" required>
-                                    <input type="submit" name="submit" value="Go" id="submit_btn">
-                </form>
-                                  
-            </nav>
-        </header>
+        <% include ../partials/header %>
+    </header>
     
     <!-- destination page -->
     <div id="destinations_container">
@@ -71,8 +46,8 @@
         </div>
                 
     </div>
-    
-
+            
+    <% include ../partials/footer %>
 </body>
 <!-- owl carousel 2 script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

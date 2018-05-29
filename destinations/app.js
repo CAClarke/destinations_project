@@ -7,6 +7,9 @@ const fileupload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var destinationRouter = require('./routes/destination');
+var createRouter = require('./routes/create');
+var newsletterRouter = require('./routes/newsletter');
 
 var app = express();
 
@@ -30,11 +33,14 @@ app.use(fileupload());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/destination', destinationRouter);
+app.use('/create', createRouter);
+app.use('/newsletter', newsletterRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -48,148 +54,17 @@ app.use(function(err, req, res, next) {
 });
 
 
-// //add mongoose db
-// var mongoose = require('mongoose');
+//add mongoose db
+var mongoose = require('mongoose');
 // var Post = require('./models/Post');
 
-//connect to db
-    // mongoose.connect('mongodb://Carrie_Codespace:silver61086@ds119080.mlab.com:19080/blog_posts');
+// connect to db
+    mongoose.connect('mongodb://Carrie_Codespace:silver61086@ds119080.mlab.com:19080/blog_posts');
 
 // // set the view engine to ejs
 // app.set('view engine', 'ejs');
 
 
-// //POST request from post page to new server
-// app.post('/posts', function(req, res){
-//   //get values
-//   let author = req.body.author;
-//   console.log(author)
-//   let title = req.body.title;
-//   let content = req.body.content;
-//   let post = {author,
-//       title,
-//       content
-//   };
-
-//   //   let post = (author, title, content);
-//   res.json({message: 'Post received!',
-//   post:post});
-  
-//   //save posts
-//   var newPost = new Post();
-//   newPost.title = req.body.title;
-//   newPost.author = req.body.author;
-//   newPost.content = req.body.content;
-
-//   //get data values
-//   newPost.save(function(error){
-//       if (error){
-//           res.send(error);
-      
-//           res.redirect('/posts');
-          
-//       };
-//   });
-// });
-//   //direct to new page, eg and archive
-
-// //archive page
-// app.get('/archive', function(req, res){
-
-
-//   //get posts from db
-//   Post.find(function(error, posts){
-//       if(error)
-//           res.send(error);
-
-//       let data = {
-//           title: "All Posts",
-//           posts: posts
-//       }
-//       res.render('pages/archive', data);
-//   });
-
-// });
-
-// //get single post by id
-// app.get('/posts/:post_id',function(req,res){
-//    let post_id = req.param.post_id;
-   
-//    Post.findById(post_id, function(error, post){
-//        if(error){
-//            res.send(error);
-//        }
-//        else{
-//            res.render('pages/post',{
-//                t11itle: post.title,
-//                post:post
-//            });
-//        }
-//    });
-// });
-
-// //edit post
-// app.get('/posts/:post_id/edit', function(req,res){
-
-//   Post.findById(req.params.post_id, function(error, post){
-//       if(error){
-//           res.send(error);
-//       }
-//       else{
-//           res.render('pages/edit',{
-//               title: post.title,
-//               post:post
-//           });
-//       }
-//   });
-// });
-// //UPDATE SINGLE POST
-// app.post('/posts/:post_id/', function (req, res) {
-
-
-//   Post.findById(req.params.post_id, function (err, post) {
-//       if (err) {
-//           res.send(err);
-//       }
-//       else {
-
-//           post.title = req.body.title;
-//           post.author = req.body.author;
-//           post.content = req.body.content;
-//           post.save(function (err) {
-//               if (err)
-//                   res.send(err);
-
-
-
-//           res.render('pages/edit', {
-//               title: post.title,
-//               post: post
-//           });
-//       });
-//   }
-//   });
-
-// });
-
-// //delete post
-// app.get('/posts/:post_id/delete', function(req, res){
-//   Post.deleteOne({_id:req.params.post_ide},function(errpr){
-//       if(error)
-//           return handleError(error);
-//           res.redirect('/posts');
-//   });
-
-// // Post.findById(req.params.post_id, function(error, post){
-// //         if(error){
-// //             res.send(error)
-// //         }else{
-// //             post.remove();
-// //             res.redirect('/posts')
-// //          }
-// //     })
-// });
-
-app.listen(3001);
+// app.listen(3000);
 
 module.exports = app;
