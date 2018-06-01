@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <% include ../partials/head %>
+        <% include ../partials/head %>
 </head>
 <body>
     <!-- navigation -->
@@ -16,110 +16,35 @@
         <p class="destination_text"><%= destinations.text %></p>
         <div id="destination_map"></div>
         <div class="destination_gallery">
-            <img class="myImg" src="../../public/images/<%= destinations.destination_img1 %>" alt="Inari Shrine Tori">
-            <img class="myImg" src="../../public/images/<%= destinations.destination_img2 %>" alt="Inari Shrine Tori">
-            <img class="myImg" src="../../public/images/<%= destinations.destination_img3 %>" alt="Inari Shrine Tori">
-
-
-            <!-- <div id="destinations_container">
-                    <img src=" destination.img " alt="The city you will explore" class="destination_backdrop">
-                    <p class="destination_city"> destination.city </p>
-                    <p class="destination_text">  destination.text</p>
-                    <div id="destination_map"></div>
-                    <div class="destination_gallery">
-                        <img class="myImg" src="../../public/images/beijing1.JPG" alt="Inari Shrine Tori">
-                        <img class="myImg" src="../../public/images/kyoto1.JPG" alt="Inari Shrine Tori">
-                        <img class="myImg" src="../../public/images/seoul1.JPG" alt="Inari Shrine Tori">
-                        <img class="myImg" src="../../public/images/news1.jpg" alt="Inari Shrine Tori">
-             </div> -->
-
-
-
-            <!-- The Modal
-        <div class="myModal" class="modal">
-
-        The Close Button 
-         <span class="close">&times;</span> 
-      
-        Modal Content (The Image) 
-        <img class="modal-content" class="img01"> 
-      
-         Modal Caption (Image Text) 
-        <div class="caption">Inari Shrine Tori</div> 
-         </div>  -->
+            <img class="myImg" src="images/<%=destinations.destination_img1%>" alt="image">
+            <img class="myImg" src="images/<%=destinations.destination_img1%>" alt="image">
+            <img class="myImg" src="images/<%=destinations.destination_img1%>" alt="image">
 
         </div>
                 
     </div>
             
     <% include ../partials/footer %>
-    
+
 </body>
-<!-- owl carousel 2 script -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="owl_carousel/owl.carousel.min.js"></script>
-
-<!-- JS start script -->
-<script type="text/javascript">
-
-  $(document).ready(function(){
-
-    
- //carousel
-  $('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    autoplay: true,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      1000: {
-        items: 4
-      }
-    }
-  });
-
-    // // Get the modal
-    // var modal = document.getElementsByClassName('myModal');
-    // // Get the image and insert it inside the modal
-    // var img = document.getElementsByClassName('myImg');
-    // var modalImg = document.getElementsByClassName("img01");
-    // var captionText = document.getElementsByClassName("caption");
-    // img.onclick = function(){
-    //     modal.style.display = "block";
-    //     modalImg.src = this.src;
-    //     captionText.innerHTML = this.alt;
-    // }
-    // // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-    // // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() { 
-    // modal.style.display = "none";
-    // }
-
-});//jquery end
-
-//     //Google Maps API
-//    // Initialize and add the map
-//     function initMap() {
-//     // The location
-//     var location = {lat: 34.9858, lng: 135.7588};
-//     // The map
-//     var map = new google.maps.Map(
-//         document.getElementById('destination_map'), {zoom: 5, center: location});
-//     // The marker
-//     var marker = new google.maps.Marker({position: location, map: map});
-//     };
-
-   
-</script>
-<!-- google maps script -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDHmg0-3WgNhwOwjNHo57UC-ZmTRDaL3wc"></script>
+<script>
+    let lat = destination.lat;
+    let long = destination.long;
+        //    <!-- Google Maps API
+        //    Initialize and add the map -->
+           function initMap() {
+        //    <!-- The location -->
+            var location = {lat: lat, lng: long};
+            // <!-- The map -->
+            var map = new google.maps.Map(
+            document.getElementById('destination_map'), {zoom: 5, center: location});
+            // <!-- The marker -->
+            var marker = new google.maps.Marker({position: location, map: map});
+             };
+            
+               
+            </script>
+            <!-- google maps script -->
+            <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDHmg0-3WgNhwOwjNHo57UC-ZmTRDaL3wc"></script>
 </html>
 

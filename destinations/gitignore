@@ -1,13 +1,1 @@
 node_modules/
-
- // Initialize and add the map
-    function initMap() {
-    // The location
-    // var location = {lat: <%= destination.lat %>, lng: <%= destination.long %>};
-    // The map
-    var map = new google.maps.Map(
-        document.getElementById('destination_map'), {zoom: 5, center: location});
-    // The marker
-    var marker = new google.maps.Marker({position: location, map: map});
-    };
-    
