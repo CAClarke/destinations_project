@@ -14,48 +14,20 @@
     <h1 id="page_title">Start <del> travelling </del> <ins>exploring</ins></h1>
 
     <div id="destinations_container">
-        <!-- Kyoto -->
-             <div>
-                    <div class="kyoto_slideshow slideshow">
-                        <div id="carousel_container">
-                                <div class="owl-carousel owl-theme">
-                                  <div class="item"><img src="images/kyoto1.JPG" alt=""></div>
-                                  <div class="item"><img src="images/beijing1.JPG" alt=""></div>
-                                  <div class="item"><img src="images/seoul1.JPG" alt=""></div>
-                                </div>
-                              </div>
-                    </div>
-                    <a href="../../destination.ejs" class="city_title" id="kyoto">kyoto</a>
-            </div>
-
-        <!-- Beijing -->
-            <div>
-                        <div class="guilin_slideshow slideshow">
-                                <div id="carousel_container">
-                                        <div class="owl-carousel owl-theme">
-                                          <div class="item"><img src="images/kyoto1.JPG" alt=""></div>
-                                          <div class="item"><img src="images/beijing1.JPG" alt=""></div>
-                                          <div class="item"><img src="images/seoul1.JPG" alt=""></div>
-                                        </div>
-                                </div>
+        <% for (destination of destinations){ %>
+        <div>
+            <div class="slideshow">
+                <div id="carousel_container">
+                        <div class="owl-carousel owl-theme">
+                          <div class="item"><img src="images/<%=destination.destination_img1%>" alt=""></div>
+                          <div class="item"><img src="images/<%=destination.destination_img2%>" alt=""></div>
+                          <div class="item"><img src="images/<%=destination.destination_img3%>" alt=""></div>
                         </div>
-                 <a href="destination.ejs" class="city_title" id="beijing">beijing</a>
+                      </div>
             </div>
-
-        <!-- Seoul -->
-             <div>
-                <div class="seoul_slideshow slideshow">
-                        <div id="carousel_container">
-                                <div class="owl-carousel owl-theme">
-                                  <div class="item"><img src="images/kyoto1.JPG" alt=""></div>
-                                  <div class="item"><img src="images/beijing1.JPG" alt=""></div>
-                                  <div class="item"><img src="images/seoul1.JPG" alt=""></div>
-                                </div>
-                              </div>
-                </div> 
-                
-                <a href="destination.ejs" class="city_title" id="seoul">seoul</a>
-            </div>
+            <a href="/destination?id=<%=destination.id%> " class="city_title"><%=destination.city%> </a>
+    </div>
+    <%};%>
           <a href="/destination" class="newsletter_link">Sign up for our newsletter</a>
     </div>
 
