@@ -12,7 +12,7 @@ router.get('/', function(req, res, next){
           res.send(error);
       }
       else{
-          res.render('pages/index',{title: 'city', destinations:destinations}
+          res.render('pages/index',{title: 'Tri Tours', destinations:destinations}
         )};
 
 

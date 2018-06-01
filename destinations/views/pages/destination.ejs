@@ -10,22 +10,21 @@
     </header>
     
     <!-- destination page -->
-    <!-- <div id="destinations_container">
+    <div id="destinations_container">
         <img src="images/ <%= destinations.backdrop_img %> " alt="" class="destination_backdrop">
         <p class="destination_city"><%= destinations.city %></p>
         <p class="destination_text"><%= destinations.text %></p>
         <div id="destination_map"></div>
         <div class="destination_gallery">
-            <img class="myImg" src="../../public/images/beijing1.JPG" alt="Inari Shrine Tori">
-            <img class="myImg" src="../../public/images/kyoto1.JPG" alt="Inari Shrine Tori">
-            <img class="myImg" src="../../public/images/seoul1.JPG" alt="Inari Shrine Tori">
-            <img class="myImg" src="../../public/images/news1.jpg" alt="Inari Shrine Tori"> -->
+            <img class="myImg" src="../../public/images/<%= destinations.destination_img1 %>" alt="Inari Shrine Tori">
+            <img class="myImg" src="../../public/images/<%= destinations.destination_img2 %>" alt="Inari Shrine Tori">
+            <img class="myImg" src="../../public/images/<%= destinations.destination_img3 %>" alt="Inari Shrine Tori">
 
 
             <!-- <div id="destinations_container">
-                    <img src="<%= destination.img %>" alt="The city you will explore" class="destination_backdrop">
-                    <p class="destination_city"><%= destination.city %></p>
-                    <p class="destination_text"> <%= destination.text %> </p>
+                    <img src=" destination.img " alt="The city you will explore" class="destination_backdrop">
+                    <p class="destination_city"> destination.city </p>
+                    <p class="destination_text">  destination.text</p>
                     <div id="destination_map"></div>
                     <div class="destination_gallery">
                         <img class="myImg" src="../../public/images/beijing1.JPG" alt="Inari Shrine Tori">
@@ -54,6 +53,7 @@
     </div>
             
     <% include ../partials/footer %>
+    
 </body>
 <!-- owl carousel 2 script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -105,19 +105,6 @@
 
 });//jquery end
 
-
-
-
-    //  // // get parameters
-    // router.get('/', function(req, res, next) {
-    //   var destination_id = req.param('id');
-    //   console.log(destination_id);
-
-    //   res.send(user_id);
-    // });
-
-
-
 //     //Google Maps API
 //    // Initialize and add the map
 //     function initMap() {
@@ -130,17 +117,7 @@
 //     var marker = new google.maps.Marker({position: location, map: map});
 //     };
 
-    // Initialize and add the map
-    function initMap() {
-    // The location
-    // var location = {lat: <%= destination.lat %>, lng: <%= destination.long %>};
-    // The map
-    var map = new google.maps.Map(
-        document.getElementById('destination_map'), {zoom: 5, center: location});
-    // The marker
-    var marker = new google.maps.Marker({position: location, map: map});
-    };
-    
+   
 </script>
 <!-- google maps script -->
 <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=AIzaSyDHmg0-3WgNhwOwjNHo57UC-ZmTRDaL3wc"></script>

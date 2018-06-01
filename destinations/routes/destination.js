@@ -9,22 +9,18 @@ var Destination = require('../models/new_destination,');
    //get single post by id
   router.get('/',function(req,res){
     
-     // get id parameter
-      // let this_url =window.location.href;
-      // console.log(this_url);
-      // var url_string = this_url;
-      // var url = new URL(url_string);
-      var destination_id = req.params.id;
+    //  get id parameter
+      var destination_id = req.param('id');
 
       console.log(destination_id);
 
-    Destination.findById({destination_id}, function(error, destination){
-      console.log(destination);
+    Destination.findById({_id:destination_id}, function(error, destinations){
+      console.log(destinations);
         if(error){
             res.send(error);
         }
         else{
-            res.render('pages/destination',{title: 'city', destination:destination}
+            res.render('pages/destination',{title: 'Explore', destinations:destinations}
           )};
 
     //         //    destination_backdrop: destination.destination_backdrop,
@@ -66,24 +62,6 @@ var Destination = require('../models/new_destination,');
 //   res.render('pages/destination',{title: 'Explore', items: 'resultsArray'});
 
 // // });
-// });
-
-// var assert = require('assert');
-// router.get('/egt-data',function(req,res,next){
-//   var resultArray= [];
-//   mongo.connect(url,function(err,db){
-//     assert.equal(null,err);
-//     var cursor = db.collection('collection-name').find();
-//     cursor.forEach(function(doc,err){
-//       assert.(null, err);
-//       resultArray.push(doc);
-
-//     }, function(){
-//       db.close();
-//       res.render(index, {items:resultArray});
-//       res.render(index, {items:resultArray});
-//     });
-//   });
 // });
 
 
