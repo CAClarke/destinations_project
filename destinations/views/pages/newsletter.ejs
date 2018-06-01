@@ -13,9 +13,9 @@
     <div id="newsletter_form">
         <div>  <h2 id="title">To receive our newsletter, please submit your name and email address.</h2></div>
                 
-        <form action="">
-            <p><input type="text" name="" placeholder="yourname" required></p>
-            <p><input type="email" name="" id="" placeholder="example@emailaddress.com" required></p>
+        <form action="/newsletter" method="post" enctype="multipart/form-data">
+            <p><input type="text" name="signup_name" id="signup_name" placeholder="yourname" required></p>
+            <p><input type="email" name="signup_email" id="signup_email" placeholder="example@emailaddress.com" required></p>
             <p><input type="submit" value="submit" id="newsletter_submit"></p>       
         </form>
 

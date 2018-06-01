@@ -3,7 +3,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
+var bodyParser = require('body-parser');
 const fileupload = require('express-fileupload');
+const mongoose = require ('mongoose');
+
+//connect to db
+mongoose.connect('mongodb://Carrie_Codespace:silver61086@ds237610.mlab.com:37610/destinations_prj');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -30,6 +35,8 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -54,16 +61,23 @@ app.use(function(err, req, res, next) {
 });
 
 
-//add mongoose db
-var mongoose = require('mongoose');
-// var Post = require('./models/Post');
+// //POST request from post page to new server
+// app.post('/newsletter_signups', function(req, res){
+//   //get values
+//   let signup_name = req.body.signup_name;
+//   let signup_email = req.body.signup_email;
+  
 
-// connect to db
-    mongoose.connect('mongodb://Carrie_Codespace:silver61086@ds119080.mlab.com:19080/blog_posts');
+//   // //   let post = (author, title, content);
+//   // res.json({message: 'New sign up received!',
+//   // post:post});
+  
+//   //save signups
+//   var newSignup = new Signup();
+//   newSignup.signup_name = req.body.signup_name;
+//   newSignup.signup_email = req.body.signup_email;
 
-// // set the view engine to ejs
-// app.set('view engine', 'ejs');
-
+//  
 
 // app.listen(3000);
 

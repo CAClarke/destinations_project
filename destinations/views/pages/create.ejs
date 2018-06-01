@@ -10,16 +10,20 @@
     </header>
 
     <!-- create page -->
-    <form action="" class="create_page" >
-        <input type="text" value="" name="city_name" class="create_page" placeholder="City, Country" required>
-        <div id="editor" class="text-editor"> </div>
-        <form action="/upload" enctype="multipart/form-data">
-            <input type="file" name="">
-            <input type="file" name="">
-            <input type="file" name="">
-            <input type="file" name="">
-            <input type="submit" name="upload" value="upload">
-        </form>
+    <!-- action must send to route -->
+    <form action="/create" method="post" enctype="multipart/form-data" class="create_page" >
+        <input type="text" name="destination_city" id="city_name" class="create_page" placeholder="City" required>
+        <label for="longitude">Longitude:</label>
+        <input type="text" name="destination_long" id="longitude" placeholder="##.####">
+        <label for="latitdue">Latitude:</label>
+        <input type="text" name="destination_lat" id="latitude" placeholder="##.####">
+        <!-- <div id="destination_text" class="text-editor"> </div> -->
+            <input type="file" name="destination_img1" class="image_upload">
+            <input type="file" name="destination_img2" class="image_upload">
+            <input type="file" name="destination_img3" class="image_upload">
+            <label for="backdrop_upload">Backdrop:</label>
+            <input type="file" name="backdrop_img" id="destination_backdrop" class="image_upload backdrop_upload">
+            
         <input type="submit" value="submit" name="submit" class="create_page">
     </form>
     
@@ -30,9 +34,10 @@
 
 <!-- Initialize Quill editor -->
 <script>
-  var quill = new Quill('#editor', {
+  var quill = new Quill('.text-editor', {
     theme: 'snow'
   });
+
 </script>
 
 </html>
