@@ -11,16 +11,7 @@ router.get('/', function(req, res, next){
 
 //handle file uploads
 router.post('/', function(req, res, next) {
-  console.log(req.files);
-
-    //  // // get parameters
-    // router.get('/', function(req, res, next) {
-    //   var destination_id = req.param('id');
-    //   console.log(destination_id);
-
-    //   res.send(user_id);
-    // });
-
+console.log(req);
   if(req.files){
     let destination_img1 = req.files.destination_img1;
     let destination_img2 = req.files.destination_img2;
@@ -46,8 +37,6 @@ router.post('/', function(req, res, next) {
     if(err)
     return res.status(500).send(err);
 
-    res.send('uploaded');
-    console.log('file uploaded');
   });
 
   backdrop_img.mv('./public/images/' +backdrop_img.name, function (err){
@@ -55,8 +44,6 @@ router.post('/', function(req, res, next) {
     if(err)
     return res.status(500).send(err);
 
-    res.send('uploaded');
-    console.log('file uploaded');
   });
 }else{
   res.send('No files present')

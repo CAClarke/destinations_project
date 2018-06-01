@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 
 //create schema for db quote
 var destinationsSchema = mongoose.Schema({
-    backdrop: String,
     city: String,
     text: String,
     long: Number,
