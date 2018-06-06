@@ -14,15 +14,15 @@ body{
         display: grid;
         grid-template-columns: 150px auto 150px 30px;
         grid-auto-rows: 20px 50px 30px 20px;
+        font-family: $cursive;
+        font-size: 45px;
+        font-weight: bold;
         li{
                 display: inline;
                 text-align: center;
-                padding-left: 80px;
+                padding-left: 50px;
                 grid-column: 2/3;
                 grid-row: 2/3;
-                font-family: $cursive;
-                font-size: 45px;
-                font-weight: bold;
                 margin: 12px;
             }
         form input{
@@ -32,6 +32,7 @@ body{
         .login{
                 grid-column: 3/4;
                 grid-row: 2/5;
+                font-size: 25px;
         }
     } 
     
