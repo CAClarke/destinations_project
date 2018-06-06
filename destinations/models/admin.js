@@ -5,8 +5,20 @@ const mongoose = require ('mongoose');
 //create schema for db quote
 
 var adminSchema = mongoose.Schema({
-  username: String,
-  useremail: String
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  passwordConf: {
+    type: String,
+    required: true,
+  }
 });
 //create model from schema
 var Admin = mongoose.model('Admin', adminSchema);
