@@ -3,9 +3,9 @@
         <a href="/"><img src="images/logo.png" alt="Tri logo" class="logo"></a>      
                 
         <ul class="nav_links">
-            <li><a href="/destination">kyoto</a></li>
-            <li><a href="/destination">beijing</a></li>
-            <li><a href="/destination">seoul</a></li>
+                <% for (destination of destinations){ %>
+            <li><a href="/destination/?id=<%=destination.id%>"><%=destination.city%></a></li>
+            <%};%>
             <li><a href="/newsletter">newsletter</a></li>
         </ul>
 

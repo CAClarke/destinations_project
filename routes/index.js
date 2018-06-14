@@ -14,9 +14,7 @@ router.get('/', function(req, res, next){
       else{
           res.render('pages/index',{title: 'Tri Tours', destinations:destinations}
         )};
-
-
-});
+  });
 
   // res.render('pages/index',{title: 'Tri Tours'});
 });

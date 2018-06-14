@@ -8,7 +8,6 @@ var Destination = require('../models/new_destination,');
 
    //get single post by id
   router.get('/',function(req,res){
-    
     //  get id parameter
       var destination_id = req.param('id');
 
@@ -22,8 +21,7 @@ var Destination = require('../models/new_destination,');
         else{
             res.render('pages/destination',{title: 'Explore', destinations:destinations}
           )};
-        });
-            
-      });
+        });     
+  });
 
 module.exports = router;
